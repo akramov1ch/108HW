@@ -14,7 +14,7 @@ func main() {
 	hub := websocket.NewHub()
 	go hub.Run()
 
-	r.POST("/tasks", task.CreateTaskHandler(hub))
+	r.POST("/task", task.CreateTaskHandler(hub))
 	r.GET("/tasks", task.GetTasksHandler)
 	r.PUT("/tasks/:id", task.UpdateTaskHandler(hub))
 	r.DELETE("/tasks/:id", task.DeleteTaskHandler(hub))
